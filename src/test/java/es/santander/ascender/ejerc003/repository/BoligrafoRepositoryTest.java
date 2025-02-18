@@ -1,7 +1,9 @@
 package es.santander.ascender.ejerc003.repository;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -15,6 +17,12 @@ public class BoligrafoRepositoryTest {
 
         @Autowired
         private BoligrafoRepository repository;
+
+        @Test
+        public void testListar(){
+                List<Boligrafo> lista= repository.findAll();
+                assertNotNull(lista);
+        }
 
         @Test
         public void testCreate() {
